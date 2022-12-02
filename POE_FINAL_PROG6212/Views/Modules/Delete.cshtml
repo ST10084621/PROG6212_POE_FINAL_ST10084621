@@ -1,0 +1,75 @@
+﻿@model POE_FINAL_PROG6212.Models.Module
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Module</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hoursWorked)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hoursWorked)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.code)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.code)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.noOfCredits)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.noOfCredits)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.classHoursPerWeek)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.classHoursPerWeek)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.remaininghours)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.remaininghours)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.selfStudyHours)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.selfStudyHours)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.semNoOfWeeks)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.semNoOfWeeks)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studentID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studentID)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ModuleId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

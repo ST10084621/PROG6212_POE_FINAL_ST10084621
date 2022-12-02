@@ -1,0 +1,48 @@
+﻿@model POE_FINAL_PROG6212.Models.Module
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Work day</h1>
+
+<h4>Select the day that you would like to work:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ModuleId" />
+            <div class="form-group">
+                <label for="day">Work day:</label>
+                <select for="day" id="drp" name="day">
+                    <option value="1"> Monday </option>
+                    <option value="2"> Tuesday </option>
+                    <option value="3"> Wednesday </option>
+                    <option value="4"> Thursday </option>
+                    <option value="5"> Friday </option>
+                    <option value="6"> Saturday </option>
+                    <option value="7"> Sunday </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

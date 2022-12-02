@@ -1,0 +1,53 @@
+﻿@model IEnumerable<POE_FINAL_PROG6212.Models.Semester>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.semesterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.noOfWeeks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.startDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.semesterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.noOfWeeks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.studentID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SemesterId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SemesterId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SemesterId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

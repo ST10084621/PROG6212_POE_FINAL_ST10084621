@@ -1,0 +1,77 @@
+﻿@model IEnumerable<POE_FINAL_PROG6212.Models.Module>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.hoursWorked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.noOfCredits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.classHoursPerWeek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.remaininghours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.selfStudyHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.semNoOfWeeks)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.hoursWorked)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.noOfCredits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.classHoursPerWeek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.remaininghours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.selfStudyHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.semNoOfWeeks)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ModuleId">Hours Spent Working</a> |
+                <a asp-action="Details" asp-route-id="@item.ModuleId">Select Work Day</a> |
+                <a asp-action="Delete" asp-route-id="@item.ModuleId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
